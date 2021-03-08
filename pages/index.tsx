@@ -61,10 +61,10 @@ export default function Home() {
 
           {data.map((d) => {
             return (
-              <div key={d.prevHash}>
+              <div key={d.prevHash} className="Card">
                 <h4>{d.poem}</h4>
                 <p>{d.ts}</p>
-                <p>{d.prevHash}</p>
+                <p className="hash">{d.prevHash}</p>
               </div>
             );
           })}

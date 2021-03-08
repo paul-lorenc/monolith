@@ -12,11 +12,11 @@ main {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --gutterWidth: 16px;
+  --gutterWidth: 40px;
   --scrollbarWidth: 0px;
   --windowWidth: calc(100vw - var(--scrollbarWidth));
   --layoutWidth: calc(var(--windowWidth) - var(--gutterWidth) * 2);
-  --layoutWidthMax: 600px;
+  --layoutWidthMax: 500px;
   --columnCountMax: 1;
   --heroColumnCount: 1;
   --h1FontSize: 2.5rem;
@@ -26,6 +26,7 @@ main {
 
 @media (min-width: 600px) {
   .ZRoot {
+    --layoutWidth: calc(var(--layoutWidthMax));
     --columnCountMax: 2;
   }
 }
@@ -39,7 +40,6 @@ main {
 }
 @media (min-width: 1180px) {
   .ZRoot {
-    --layoutWidth: calc(var(--layoutWidthMax));
     --gutterWidth: calc(var(--windowWidth) / 2 - var(--layoutWidth) / 2);
     --h1FontSize: 3.25rem;
     --h2FontSize: 2.25rem;
@@ -61,4 +61,14 @@ main {
 
 .Submit--Button {
   justify-self: end;
+}
+
+.Card {
+  border: 1px;
+  border-color: black;
+  overflow: hidden;
+}
+
+.hash {
+  font-size: 0.72rem;
 }
