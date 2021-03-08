@@ -1,16 +1,63 @@
 html,
-body {
+body,
+main {
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-width: 300px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.ZRoot {
+  font-family: "Inter";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --gutterWidth: 16px;
+  --scrollbarWidth: 0px;
+  --windowWidth: calc(100vw - var(--scrollbarWidth));
+  --layoutWidth: calc(var(--windowWidth) - var(--gutterWidth) * 2);
+  --layoutWidthMax: 600px;
+  --columnCountMax: 1;
+  --heroColumnCount: 1;
+  --h1FontSize: 2.5rem;
+  --h2FontSize: 1.5rem;
+  --h3FontSize: 1.2rem;
 }
 
-* {
-  box-sizing: border-box;
+@media (min-width: 600px) {
+  .ZRoot {
+    --columnCountMax: 2;
+  }
+}
+@media (min-width: 900px) {
+  .ZRoot {
+    --columnCountMax: 4;
+    --heroColumnCount: 2;
+    --h1FontSize: 3rem;
+    --h2FontSize: 2rem;
+  }
+}
+@media (min-width: 1180px) {
+  .ZRoot {
+    --layoutWidth: calc(var(--layoutWidthMax));
+    --gutterWidth: calc(var(--windowWidth) / 2 - var(--layoutWidth) / 2);
+    --h1FontSize: 3.25rem;
+    --h2FontSize: 2.25rem;
+  }
+}
+
+.Input--Container {
+  width: var(--layoutWidth);
+  margin: 0 auto;
+  margin-top: 56px;
+  display: grid;
+  justify-items: center;
+}
+
+.Textbox--Styles {
+  width: 100%;
+}
+
+.Submit--Button {
+  justify-self: end;
 }
